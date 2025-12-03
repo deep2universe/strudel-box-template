@@ -96,7 +96,7 @@ Steering documents can reference other files:
 
 ```javascript
 // Example: Minimal Techno
-setcpm(130)
+setcpm(40)
 
 stack(
   s("bd*4"),
