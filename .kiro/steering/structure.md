@@ -28,3 +28,11 @@ The main guide (`STRUDEL_BOX_PATTERN_GUIDE.md`) covers:
 - Use `setcpm(120)` for explicit tempo
 - Use `stack()` for layering multiple patterns
 - Patterns are synchronous - no async/await
+
+## AI File Creation Rules
+When creating Strudel patterns, the AI must:
+1. **Always create new files** - Do not output patterns inline, always save to a `.strudel` file
+2. **Check for existing files** - Before creating a new file, verify if a file with the same name already exists
+3. **Use `.strudel` extension** - All pattern files must end with `.strudel`
+4. **Default location is root** - Save files to the workspace root directory unless otherwise specified
+5. **Use descriptive names** - Name files based on their content (e.g., `techno-beat.strudel`, `ambient-pad.strudel`)
