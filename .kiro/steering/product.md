@@ -1,21 +1,29 @@
-# Product Overview
+---
+inclusion: always
+---
 
-Strudel Box is a VS Code extension for live-coding music patterns using the Strudel audio engine (@strudel/web).
+# Strudel Box Product Guide
 
-## Core Features
-- Webview-based REPL with CodeMirror 6 editor
-- Real-time audio playback
-- Pre-loaded sample libraries (tidal-drum-machines, piano, Dirt-Samples, EmuSP12, vcsl)
-- Three visual themes: Cyberpunk, Halloween, 8-Bit
+VS Code extension for live-coding music patterns using the Strudel audio engine (@strudel/web).
 
 ## File Format
 - Extension: `.strudel`
 - Syntax: JavaScript (ES2020+)
-- Comments: `//` single-line, `/* */` multi-line
+- Patterns are synchronous — no async/await
 
-## Key Capabilities
-- Pattern-based music composition using mini-notation
-- Built-in synthesizers (sawtooth, square, triangle, sine)
-- Audio effects (filters, reverb, delay, panning)
-- Scales, chords, and Euclidean rhythms
-- Pattern transformations and conditional modifications
+## Available Sound Sources
+- Synthesizers: `sawtooth`, `square`, `triangle`, `sine` (always available)
+- Sample libraries: tidal-drum-machines, piano, Dirt-Samples, EmuSP12, vcsl
+- Standard samples: `bd`, `sd`, `hh`, `cp`, `oh`, `cb`
+
+## Code Style Requirements
+- Use dot-chaining for modifications (e.g., `.lpf(800).room(0.3).gain(0.8)`)
+- End patterns with `.gain(0.8)` to prevent clipping
+- Set tempo explicitly with `setcpm(120)`
+- Use `stack()` for layering multiple patterns
+- Prefer built-in synths over samples for reliability
+
+## Not Supported
+- CSound, Hydra Visuals, Tidal syntax
+- External/custom samples
+- Async operations
