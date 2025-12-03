@@ -1,0 +1,94 @@
+// Halloween Horror - Dark Cinematic Atmosphere
+setcpm(80)
+
+stack(
+  // Deep drone foundation - ominous sustained bass
+  note("<c1 ~ ~ ~ b0 ~ ~ ~ bb0 ~ ~ ~ a0 ~ ~ ~>/4")
+    .sound("sawtooth")
+    .lpf(120)
+    .gain(0.5)
+    .attack(1)
+    .decay(0.5)
+    .sustain(0.8)
+    .release(2),
+
+  // Eerie pad - dissonant cluster chords
+  note("<[c3,e3,gb3,bb3] [b2,eb3,f3,a3] [bb2,d3,e3,ab3] [a2,db3,eb3,g3]>/2")
+    .sound("sine")
+    .gain(0.35)
+    .attack(1.5)
+    .release(2)
+    .room(0.9)
+    .size(0.9)
+    .lpf(800),
+
+  // Creepy music box melody - off-kilter timing
+  note("<[c5 ~ eb5 ~] [~ gb5 ~ a5] [bb5 ~ g5 ~] [~ e5 ~ db5]>")
+    .sound("triangle")
+    .gain(0.4)
+    .attack(0.01)
+    .decay(0.3)
+    .release(0.5)
+    .room(0.7)
+    .delay(0.375)
+    .delayfeedback(0.5)
+    .pan(sine.range(0.2, 0.8).slow(6)),
+
+  // Heartbeat kick - slow and menacing
+  s("bd ~ ~ bd:2 ~ ~ ~ ~, ~ ~ ~ ~ bd ~ ~ ~")
+    .gain(0.65)
+    .lpf(200)
+    .room(0.4),
+
+  // Ghostly whispers - high frequency texture
+  note("<[c7 b6] [ab6 g6] [gb6 f6] [e6 eb6]>/4")
+    .sound("sine")
+    .gain(0.2)
+    .attack(0.5)
+    .release(1.5)
+    .room(0.95)
+    .hpf(3000)
+    .pan(sine.range(0, 1).slow(3)),
+
+  // Tension risers - chromatic ascent
+  note("<c4 db4 d4 eb4 e4 f4 gb4 g4>/8")
+    .sound("sawtooth")
+    .lpf(sine.range(400, 2000).slow(8))
+    .lpq(10)
+    .gain(0.3)
+    .attack(0.1)
+    .release(0.4)
+    .room(0.5)
+    .every(8, x => x.fast(2)),
+
+  // Metallic hits - industrial horror
+  s("<~ ~ oh:2 ~ ~ ~ ~ oh:3> <~ oh:1 ~ ~ ~ oh:4 ~ ~>")
+    .gain(0.35)
+    .hpf(4000)
+    .room(0.6)
+    .speed("<0.5 0.7 0.6 0.8>")
+    .delay(0.25)
+    .delayfeedback(0.4),
+
+  // Sub pulse - rumbling dread
+  note("<c0 ~ ~ ~ ~ ~ ~ ~>/2")
+    .sound("sine")
+    .gain(0.55)
+    .attack(0.3)
+    .decay(1)
+    .sustain(0.6)
+    .release(1.5)
+    .lpf(60),
+
+  // Diminished arpeggio - classic horror
+  note("<[c4 eb4 gb4 a4] ~ [b3 d4 f4 ab4] ~ [bb3 db4 e4 g4] ~ [a3 c4 eb4 gb4] ~>")
+    .sound("square")
+    .lpf(1500)
+    .gain(0.25)
+    .attack(0.05)
+    .decay(0.2)
+    .sustain(0.3)
+    .release(0.4)
+    .room(0.5)
+    .sometimes(x => x.rev())
+).gain(0.8)

@@ -1,0 +1,79 @@
+// Halloween Piano - A Haunting Musical Journey
+setcpm(72)
+
+stack(
+  // Eerie piano melody - chromatic descending phrases
+  note("<[c5 b4 bb4 a4] [ab4 g4 gb4 f4] [e4 eb4 d4 db4] [c4 ~ b3 ~]>")
+    .sound("piano")
+    .gain(0.7)
+    .room(0.6)
+    .delay(0.2)
+    .delayfeedback(0.4),
+
+  // Haunting bass octaves - minor key foundation
+  note("<[c2 c3] [ab1 ab2] [g1 g2] [gb1 gb2]>/2")
+    .sound("piano")
+    .gain(0.6)
+    .attack(0.05)
+    .release(1.2)
+    .room(0.5),
+
+  // Dissonant chord stabs - tritones and minor 2nds
+  note("<[c4,gb4,b4] ~ [ab3,d4,g4] ~ [g3,db4,f4] ~ [gb3,c4,e4] ~>")
+    .sound("piano")
+    .gain(0.5)
+    .attack(0.01)
+    .decay(0.3)
+    .sustain(0.2)
+    .release(0.8)
+    .room(0.7)
+    .sometimes(x => x.delay(0.125)),
+
+  // Ghostly high register trills
+  note("[c6 db6]*4, [e6 f6]*4, [g6 ab6]*4, [b6 c7]*4")
+    .sound("piano")
+    .gain(0.35)
+    .attack(0.02)
+    .release(0.2)
+    .room(0.8)
+    .pan(sine.range(0.2, 0.8).slow(2))
+    .rarely(x => x.fast(2)),
+
+  // Creeping mid-range arpeggios
+  note("<[c4 eb4 gb4 a4] [ab3 b3 d4 f4] [g3 bb3 db4 e4] [gb3 a3 c4 eb4]>")
+    .sound("piano")
+    .gain(0.45)
+    .attack(0.1)
+    .release(0.6)
+    .room(0.5)
+    .delay(0.33)
+    .delayfeedback(0.3)
+    .every(4, x => x.rev()),
+
+  // Thunderous low rumbles
+  note("<c1 ~ ~ ab0 ~ ~ g0 ~ ~ gb0 ~ ~>/3")
+    .sound("piano")
+    .gain(0.55)
+    .attack(0.2)
+    .release(2)
+    .room(0.9)
+    .size(0.95)
+    .lpf(400),
+
+  // Spectral whispers - high harmonics
+  note("<[c7 ~ e7 ~] [~ ab6 ~ b6] [g6 ~ bb6 ~] [~ db7 ~ f6]>")
+    .sound("piano")
+    .gain(0.25)
+    .attack(0.3)
+    .release(1.5)
+    .room(0.95)
+    .hpf(2000)
+    .pan(sine.range(0, 1).slow(8))
+    .often(x => x.slow(2)),
+
+  // Heartbeat pulse - subtle tension builder
+  s("bd:3 ~ bd:3 ~, ~ ~ ~ cp?")
+    .gain(0.3)
+    .room(0.6)
+    .lpf(300)
+).gain(0.8)

@@ -1,0 +1,90 @@
+// Halloween House - Spooky Dancefloor
+setcpm(124)
+
+stack(
+  // Four-on-the-floor kick
+  s("bd*4")
+    .gain(0.85)
+    .lpf(800),
+
+  // Offbeat hi-hats with ghost notes
+  s("~ hh ~ hh, hh*8?")
+    .gain(0.55)
+    .hpf(6000)
+    .pan(sine.range(0.3, 0.7).fast(2)),
+
+  // Classic house clap on 2 and 4
+  s("~ cp ~ cp")
+    .gain(0.7)
+    .room(0.3)
+    .delay(0.125)
+    .delayfeedback(0.2),
+
+  // Eerie minor chord stabs - haunted house chords
+  note("<[c4,eb4,gb4] ~ ~ [c4,eb4,gb4] ~ ~ ~ ~> <[ab3,b3,eb4] ~ ~ [ab3,b3,eb4] ~ ~ ~ ~> <[g3,bb3,db4] ~ ~ [g3,bb3,db4] ~ ~ ~ ~> <[gb3,a3,c4] ~ ~ ~ [gb3,a3,c4] ~ ~ ~>")
+    .sound("sawtooth")
+    .lpf(sine.range(800, 3000).slow(8))
+    .lpq(8)
+    .gain(0.45)
+    .attack(0.01)
+    .decay(0.15)
+    .sustain(0.3)
+    .release(0.2)
+    .room(0.25),
+
+  // Creeping bass line - chromatic descent
+  note("<c2 c2 c2 b1 bb1 bb1 ab1 ab1 g1 g1 gb1 gb1 f1 f1 e1 e1>/4")
+    .sound("sawtooth")
+    .lpf(400)
+    .gain(0.7)
+    .attack(0.01)
+    .decay(0.1)
+    .sustain(0.8)
+    .release(0.1),
+
+  // Spooky arp - diminished patterns
+  note("<[c5 eb5 gb5 a5] [ab4 b4 d5 f5] [g4 bb4 db5 e5] [gb4 a4 c5 eb5]>")
+    .sound("triangle")
+    .gain(0.35)
+    .attack(0.02)
+    .release(0.3)
+    .lpf(2500)
+    .room(0.4)
+    .delay(0.166)
+    .delayfeedback(0.35)
+    .pan(sine.range(0.2, 0.8).slow(4))
+    .every(4, x => x.rev()),
+
+  // Ghostly pad - slow evolving texture
+  note("<[c3,eb3,gb3,bb3] [ab2,b2,d3,f3] [g2,bb2,db3,e3] [gb2,a2,c3,eb3]>/2")
+    .sound("sine")
+    .gain(0.3)
+    .attack(0.5)
+    .release(1)
+    .room(0.7)
+    .lpf(1200),
+
+  // Witch cackle percussion hits
+  s("<oh ~ ~ oh:2 ~ ~ ~ ~> <~ ~ oh:3 ~ ~ ~ oh:1 ~>")
+    .gain(0.4)
+    .hpf(3000)
+    .room(0.5)
+    .speed("<1 1.2 0.8 1.5>")
+    .sometimes(x => x.delay(0.25)),
+
+  // Sub bass pulse
+  note("<c1 ~ ab0 ~ g0 ~ gb0 ~>/2")
+    .sound("sine")
+    .gain(0.6)
+    .attack(0.05)
+    .decay(0.2)
+    .sustain(0.7)
+    .release(0.3)
+    .lpf(100),
+
+  // Ride pattern for drive
+  s("~ ~ ~ ~, ~ [~ ride] ~ [~ ride]")
+    .gain(0.35)
+    .hpf(8000)
+    .room(0.2)
+).gain(0.8)
