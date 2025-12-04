@@ -1,0 +1,16 @@
+{
+  "enabled": true,
+  "name": "Strudel Tutorial Generator",
+  "description": "When a .strudel file is saved, automatically creates a .md file with the same name containing an English tutorial that explains the Strudel code in a beginner-friendly way.",
+  "version": "1",
+  "when": {
+    "type": "fileEdited",
+    "patterns": [
+      "**/*.strudel"
+    ]
+  },
+  "then": {
+    "type": "askAgent",
+    "prompt": "A .strudel file was just saved. Please read the content of this file and create a new .md file with the same name (replacing .strudel with .md) in the same directory. The .md file should contain a beginner-friendly English tutorial that explains the Strudel code. Include: 1) A brief overview of what the pattern does musically, 2) Line-by-line or section-by-section explanations of the code, 3) Explanations of any Strudel functions used (like stack, note, sound, lpf, gain, etc.), 4) Tips for beginners on how they could modify or experiment with the pattern. Write in a friendly, educational tone suitable for someone new to Strudel and live-coding."
+  }
+}
