@@ -1,0 +1,49 @@
+// 🐦🎹 Piano Birds - A Melodic Aviary
+// Gentle piano melodies inspired by birdsong
+
+setcpm(110)
+
+stack(
+  // Main bird melody - high trills and chirps
+  note("[c5 e5 g5 e5] [d5 f5 a5 f5] [e5 g5 b5 g5] [c5 e5 g5 c6]")
+    .s("piano")
+    .velocity(0.7)
+    .room(0.4)
+    .gain(0.7),
+
+  // Answering bird call - playful response
+  note("~ [g5 a5 g5] ~ [e5 f5 e5]")
+    .s("piano")
+    .velocity(0.6)
+    .delay(0.15)
+    .gain(0.6),
+
+  // Gentle bass - like a wise old owl
+  note("<c2 g2> <e2 b2> <a2 e2> <g2 d2>")
+    .s("piano")
+    .velocity(0.5)
+    .room(0.3)
+    .gain(0.6),
+
+  // Mid-range harmony - rustling feathers
+  note("<[c3 e3 g3] [d3 f3 a3] [e3 g3 b3] [c3 e3 g3]>")
+    .s("piano")
+    .velocity(0.4)
+    .room(0.5)
+    .gain(0.5),
+
+  // Sparkling high notes - morning dew drops
+  note("~ ~ [c6 e6] ~ ~ ~ [g5 b5] ~")
+    .s("piano")
+    .velocity(0.5)
+    .delay(0.2)
+    .delayfeedback(0.3)
+    .room(0.6)
+    .gain(0.4),
+
+  // Soft rhythmic pulse - heartbeat of the forest
+  note("[c4 ~ e4 ~]*2")
+    .s("piano")
+    .velocity(0.3)
+    .gain(0.4)
+).gain(0.8)

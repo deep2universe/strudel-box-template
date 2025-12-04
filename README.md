@@ -1,10 +1,14 @@
-# Strudel Box Template
+# strudel-box Template
 
-A template project for the VS Code extension [Strudel Box](https://marketplace.visualstudio.com/items?itemName=deep2universe.strudel-box) – live-coding music patterns directly in VS Code.
+[![YouTube Demo](https://img.shields.io/badge/YouTube-Demo-red?style=flat-square&logo=youtube)](https://youtu.be/iuMaoxbjEkc)
+[![VS Code Marketplace](https://img.shields.io/visual-studio-marketplace/v/deep2universe.strudel-box?style=flat-square&label=VS%20Code%20Marketplace)](https://marketplace.visualstudio.com/items?itemName=deep2universe.strudel-box)
+[![Open VSX](https://img.shields.io/open-vsx/v/deep2universe/strudel-box?style=flat-square&label=Open%20VSX)](https://open-vsx.org/extension/deep2universe/strudel-box)
 
-## What is Strudel Box?
+A template project for the strudel-box extension – live-coding music patterns directly in KIRO.
 
-Strudel Box is a VS Code extension that integrates the Strudel audio engine (@strudel/web) in a webview-based REPL. You can:
+## What is strudel-box?
+
+strudel-box is a KIRO extension that integrates the Strudel audio engine (@strudel/web) in a webview-based REPL. You can:
 
 - Program and play music patterns in real-time
 - Use synthesizers and sample libraries
@@ -38,7 +42,7 @@ Strudel Box is a VS Code extension that integrates the Strudel audio engine (@st
 
 ## Quick Start
 
-1. Install [Strudel Box](https://marketplace.visualstudio.com/items?itemName=deep2universe.strudel-box) in VS Code
+1. Install [strudel-box](https://marketplace.visualstudio.com/items?itemName=deep2universe.strudel-box) in KIRO
 2. Open a `.strudel` file
 3. Press `Ctrl+Enter` (or `Cmd+Enter` on Mac) to play the pattern
 4. Edit the code and hear changes in real-time
@@ -55,7 +59,7 @@ Steering documents are Markdown files in the `.kiro/steering/` directory that pr
 
 | File | Purpose |
 |------|---------|
-| `product.md` | Describes core features of Strudel Box |
+| `product.md` | Describes core features of strudel-box |
 | `structure.md` | Defines project structure and code conventions |
 | `strudel-guide.md` | Complete syntax guide with mini-notation, effects, examples |
 | `tech.md` | Tech stack, available samples/synths, unsupported features |

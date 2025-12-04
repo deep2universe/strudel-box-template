@@ -1,0 +1,132 @@
+// Jazz House Piano - Complex fusion of house grooves with jazz harmony
+setcpm(118)
+
+stack(
+  // === DRUMS - Swung House Foundation ===
+  
+  // Kick - four-on-the-floor with jazz ghost notes
+  s("<bd bd bd bd> <bd bd [~ bd:1] bd>")
+    .gain(0.85)
+    .lpf(180),
+  
+  // Swung hi-hats with velocity variation
+  s("[hh hh hh hh] [hh [hh hh] hh hh]")
+    .gain("<0.45 0.3 0.5 0.35> <0.4 0.32 0.48 0.38>")
+    .lpf("<6500 8000 5500 9000>")
+    .pan(sine.range(0.35, 0.65).slow(6)),
+  
+  // Ride cymbal - jazz feel
+  s("~ hh:1 [hh:1 ~] hh:1").slow(2)
+    .gain(0.28)
+    .lpf(10000)
+    .pan(0.7)
+    .room(0.2),
+  
+  // Clap with swing
+  s("~ [~ cp] ~ cp")
+    .gain(0.6)
+    .room(0.3)
+    .delay(0.06),
+  
+  // Ghost snares - jazz brush feel
+  s("[~ sd:1] ~ [sd:1 ~] ~").slow(2)
+    .gain(0.25)
+    .lpf(3000)
+    .room(0.35),
+  
+  // Open hat accents
+  s("~ ~ ~ [oh ~]").slow(2)
+    .gain(0.4)
+    .lpf(4500)
+    .decay(0.12),
+
+  // === PIANO - Extended Jazz Voicings ===
+  
+  // Main comping - ii-V-I-VI with extensions (Dm9 - G13 - Cmaj9 - A7alt)
+  note("<[d3,f3,a3,c4,e4] [d3,f3,a3,c4,e4] [g2,b2,d3,f3,a3,e4] [g2,b2,d3,f3,a3,e4] [c3,e3,g3,b3,d4] [c3,e3,g3,b3,d4] [a2,c#3,e3,g3,bb3] [a2,c#3,e3,g3,bb3]>")
+    .s("piano")
+    .gain("[0.55 ~ 0.45 ~] [~ 0.5 ~ 0.48]")
+    .lpf(2600)
+    .room(0.4)
+    .pan(0.35),
+  
+  // Piano stabs - syncopated jazz hits
+  note("[~ [f4,a4,d5] ~ ~] [~ ~ [b3,e4,a4] ~] [~ [e4,g4,b4] ~ ~] [~ ~ ~ [c#4,e4,g4]]")
+    .s("piano")
+    .gain(0.45)
+    .lpf(4200)
+    .room(0.35)
+    .delay(0.15)
+    .pan(0.62),
+  
+  // Bebop-style melody line - 16 bar phrase
+  note("[d5 ~ e5 f5] [g5 ~ a5 ~] [~ b5 a5 g5] [f5 ~ e5 ~] [d5 ~ ~ f5] [a5 g5 ~ e5] [~ d5 c5 ~] [b4 ~ ~ ~] [c5 ~ d5 e5] [f5 ~ g5 ~] [~ a5 g5 f5] [e5 ~ d5 ~] [c5 ~ ~ e5] [g5 f5 ~ d5] [~ c5 b4 ~] [c5 ~ ~ ~]".slow(4))
+    .s("piano")
+    .gain(0.42)
+    .lpf(4800)
+    .room(0.45)
+    .delay(0.22)
+    .pan(sine.range(0.4, 0.6).slow(16)),
+  
+  // Walking bass piano - jazz movement
+  note("<[d2 ~ f2 ~] [~ a2 ~ a2] [g2 ~ b2 ~] [~ d3 ~ d2] [c2 ~ e2 ~] [~ g2 ~ g2] [a1 ~ c#2 ~] [~ e2 ~ e2]>")
+    .s("piano")
+    .gain(0.52)
+    .lpf(700)
+    .room(0.2),
+  
+  // Upper structure triads - modern jazz voicings
+  note("<[a4,c5,e5] ~ [b4,d5,f5] ~ [g4,b4,d5] ~ [bb4,c#5,e5] ~>".slow(2))
+    .s("piano")
+    .gain(0.32)
+    .lpf(3500)
+    .room(0.5)
+    .attack(0.08)
+    .pan(0.55),
+
+  // === SYNTH BASS - Deep House Foundation ===
+  
+  // Main bass with filter movement
+  note("<[d2 ~ ~ d2] [~ d2 d2 ~] [g1 ~ ~ g1] [~ g1 g1 ~] [c2 ~ ~ c2] [~ c2 c2 ~] [a1 ~ ~ a1] [a1 ~ a1 ~]>")
+    .s("sawtooth")
+    .lpf(sine.range(280, 550).slow(8))
+    .gain(0.62)
+    .decay(0.22),
+  
+  // Sub bass layer
+  note("<d1 d1 g0 g0 c1 c1 a0 a0>")
+    .s("sine")
+    .gain(0.48)
+    .lpf(100),
+
+  // === SYNTH PADS - Atmospheric Jazz Colors ===
+  
+  // Warm pad with 9th voicings
+  note("<[d4,a4,e5] [g3,d4,a4] [c4,g4,d5] [a3,e4,bb4]>".slow(2))
+    .s("triangle")
+    .lpf(1100)
+    .gain(0.22)
+    .room(0.65)
+    .attack(0.4)
+    .decay(1.0)
+    .pan(sine.range(0.25, 0.75).slow(16)),
+  
+  // Arp - jazz scale runs
+  note("[d4 f4 a4 c5 e5 c5 a4 f4] [g3 b3 d4 f4 a4 f4 d4 b3] [c4 e4 g4 b4 d5 b4 g4 e4] [a3 c#4 e4 g4 bb4 g4 e4 c#4]".fast(2))
+    .s("square")
+    .lpf(sine.range(1200, 3500).slow(4))
+    .gain(0.18)
+    .room(0.35)
+    .delay(0.28)
+    .pan(0.68),
+  
+  // Rhodes-style electric piano shimmer
+  note("<[d4,f4] [g4,b4] [c4,e4] [a4,c#5]>".slow(4))
+    .s("sine")
+    .lpf(2000)
+    .gain(0.2)
+    .room(0.55)
+    .delay(0.35)
+    .attack(0.15)
+    .pan(0.4)
+)

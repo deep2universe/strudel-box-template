@@ -1,0 +1,56 @@
+// 🐦 Funny Birds - A Musical Comedy
+// Chirpy chaos with feathered friends
+
+setcpm(125)
+
+stack(
+  // Silly bird calls - high pitched chirps
+  note("c6 e6 g6 c7 ~ e6 c6 ~")
+    .s("triangle")
+    .decay(0.1)
+    .sustain(0)
+    .delay(0.2)
+    .gain(0.5),
+
+  // Waddling penguin bass
+  note("c2 ~ c2 c2 ~ c2 ~ c2")
+    .s("sawtooth")
+    .lpf(400)
+    .decay(0.2)
+    .sustain(0.1)
+    .gain(0.6),
+
+  // Pecking woodpecker rhythm
+  s("hh*8")
+    .gain("[0.8 0.4 0.6 0.4]*2")
+    .pan(sine.range(0.3, 0.7)),
+
+  // Flapping wings - wobbly synth
+  note("<c4 e4 g4 e4>")
+    .s("square")
+    .lpf(sine.range(300, 1200).slow(2))
+    .decay(0.3)
+    .sustain(0.1)
+    .room(0.4)
+    .gain(0.4),
+
+  // Angry goose honks
+  note("[~ ~ g3 ~]*2")
+    .s("sawtooth")
+    .lpf(600)
+    .decay(0.4)
+    .sustain(0.2)
+    .gain(0.5),
+
+  // Funky chicken strut beat
+  s("bd ~ sd:3 bd ~ sd:3 bd cp")
+    .gain(0.7),
+
+  // Owl hoots in the background
+  note("<[~ ~ ~ c3] [~ ~ ~ g2]>")
+    .s("sine")
+    .decay(0.5)
+    .sustain(0.3)
+    .room(0.6)
+    .gain(0.4)
+).gain(0.8)

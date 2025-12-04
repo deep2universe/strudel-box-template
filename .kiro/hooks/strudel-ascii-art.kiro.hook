@@ -1,0 +1,16 @@
+{
+  "enabled": true,
+  "name": "Strudel ASCII Art Generator",
+  "description": "Generates a beautiful ASCII art visualization file whenever a Strudel file is saved. The ASCII art file will be named with an 'ascii-' prefix and contain an artistic interpretation of the music pattern.",
+  "version": "1",
+  "when": {
+    "type": "fileEdited",
+    "patterns": [
+      "**/*.strudel"
+    ]
+  },
+  "then": {
+    "type": "askAgent",
+    "prompt": "A Strudel file has been saved. Read the contents of the saved .strudel file and create a corresponding ASCII art visualization file. The output file should be named with 'ascii-' prefixed to the original filename but with a .txt extension (e.g., 'funny-birds.strudel' becomes 'ascii-funny-birds.txt'). \n\nCreate a richly detailed, visually striking ASCII art piece that artistically interprets the Strudel music pattern. Consider:\n- The mood and theme suggested by the filename and pattern content\n- Musical elements like rhythm, tempo, instruments, and effects\n- Use creative ASCII characters to represent sounds, beats, melodies, and textures\n- Make it beautiful and artistic - think of it as visual poetry representing the music\n- Include decorative borders, patterns, and visual flow that captures the essence of the piece\n- The art should be substantial (at least 30-50 lines) and showcase creativity\n\nWrite the ASCII art to the new file."
+  }
+}
