@@ -314,11 +314,16 @@ chord("<C^7 Am7 Dm7 G7>")
 ## 7. Tempo & Timing
 
 ```javascript
-// Set BPM (Cycles per Minute)
-setcpm(120)         // 120 BPM
+// Set CPM (Cycles per Minute)
+// IMPORTANT: 1 cycle = 4 beats in a typical 4/4 pattern
+// Formula: desired BPM ÷ 4 = setcpm value
+setcpm(30)          // 120 BPM (30 × 4 = 120)
+setcpm(32.5)        // 130 BPM (Techno)
+setcpm(31)          // 124 BPM (House)
+setcpm(43.5)        // 174 BPM (Drum & Bass)
 
 // Alternative
-setCps(2)           // 2 Cycles per Second = 120 BPM
+setCps(0.5)         // 0.5 Cycles per Second = 30 CPM = 120 BPM
 ```
 
 ---
@@ -364,7 +369,7 @@ stack(
 ### 8.5 Complete Arrangement
 
 ```javascript
-setcpm(120)
+setcpm(30) // 120 BPM
 
 stack(
   // Drums
@@ -397,7 +402,7 @@ stack(
 
 **Techno:**
 ```javascript
-setcpm(130)
+setcpm(32.5) // 130 BPM
 stack(
   s("bd*4"),
   s("~ cp ~ cp"),
@@ -408,7 +413,7 @@ stack(
 
 **House:**
 ```javascript
-setcpm(124)
+setcpm(31) // 124 BPM
 stack(
   s("bd*4, hh*8"),
   s("~ cp ~ cp"),
@@ -418,7 +423,7 @@ stack(
 
 **Drum & Bass:**
 ```javascript
-setcpm(174)
+setcpm(43.5) // 174 BPM
 stack(
   s("bd ~ ~ bd ~ ~ bd ~, ~ ~ cp ~ ~ cp ~ ~"),
   s("hh*16").gain(0.5),
@@ -428,7 +433,7 @@ stack(
 
 **Ambient:**
 ```javascript
-setcpm(60)
+setcpm(15) // 60 BPM
 stack(
   note("c3 e3 g3 b3")
     .sound("sine")
@@ -510,7 +515,7 @@ s("bd sd hh cp")
 3. **Use standard samples** - `bd`, `sd`, `hh`, `cp` are reliably loaded
 4. **Control gain** - `.gain(0.8)` at the end prevents clipping
 5. **Use room sparingly** - `.room(0.2-0.4)` for subtle space
-6. **Set BPM explicitly** - `setcpm(120)` for clear tempo indication
+6. **Set tempo explicitly** - `setcpm(30)` for 120 BPM (BPM ÷ 4 = CPM)
 7. **Use stack for layering** - `stack()` for multiple simultaneous patterns
 8. **No async/await** - Strudel patterns are synchronous
 9. **No external samples** - Only use pre-loaded libraries
