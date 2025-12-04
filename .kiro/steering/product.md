@@ -23,7 +23,13 @@ VS Code extension for live-coding music patterns using the Strudel audio engine 
 - Use `stack()` for layering multiple patterns
 - Prefer built-in synths over samples for reliability
 
-## Not Supported
-- CSound, Hydra Visuals, Tidal syntax
+## Strudel Player - Open in Browser
+- The extension includes a "Strudel Player" feature that opens `.strudel` files directly on strudel.cc
+- Use this to access the full Strudel web environment with additional features
+- Hydra Visuals and other web-only features are available when opened via strudel.cc
+
+## Not Supported (in VS Code extension)
+- CSound, Tidal syntax
 - External/custom samples
 - Async operations
+- Hydra Visuals (use Strudel Player to open in browser for visualizations)
