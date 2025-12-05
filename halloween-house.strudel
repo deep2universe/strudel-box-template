@@ -1,5 +1,5 @@
 // Halloween House - Spooky Dancefloor
-setcpm(34)
+setcpm(32)
 
 stack(
   // Four-on-the-floor kick
