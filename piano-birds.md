@@ -11,7 +11,7 @@ This pattern creates a layered piano composition with six distinct voices:
 - Sparkling high notes with echo effects
 - A gentle rhythmic pulse underneath it all
 
-The result is dreamy, nature-inspired ambient music at a relaxed 110 BPM.
+The result is dreamy, nature-inspired ambient music at a relaxed 80 BPM.
 
 ---
 
@@ -20,10 +20,10 @@ The result is dreamy, nature-inspired ambient music at a relaxed 110 BPM.
 ### Setting the Tempo
 
 ```javascript
-setcpm(110)
+setcpm(20)
 ```
 
-`setcpm()` sets the tempo in "cycles per minute." At 110 CPM, each cycle (one full loop of your pattern) takes just over half a second. This gives the piece a calm, unhurried feel.
+`setcpm()` sets the tempo in "cycles per minute." At 20 CPM (which equals 80 BPM in a typical 4/4 pattern), each cycle takes about 3 seconds — very slow and meditative. This gives the piece a calm, unhurried feel perfect for ambient birdsong.
 
 ---
 
@@ -178,7 +178,7 @@ The low velocity (0.3) keeps this very soft — you feel it more than hear it.
 
 ## Tips for Experimenting
 
-1. **Change the tempo:** Try `setcpm(80)` for a slower, dreamier feel, or `setcpm(140)` for more energy.
+1. **Change the tempo:** Try `setcpm(15)` for an even slower, dreamier feel, or `setcpm(30)` for more energy (120 BPM).
 
 2. **Swap instruments:** Replace `.s("piano")` with `.s("sawtooth")` or `.s("sine")` for a synth version.
 

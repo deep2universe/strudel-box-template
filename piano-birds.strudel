@@ -1,7 +1,7 @@
 // 🐦🎹 Piano Birds - A Melodic Aviary
 // Gentle piano melodies inspired by birdsong
 
-setcpm(110)
+setcpm(20)
 
 stack(
   // Main bird melody - high trills and chirps
