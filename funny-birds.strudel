@@ -1,7 +1,7 @@
 // 🐦 Funny Birds - A Musical Comedy
 // Chirpy chaos with feathered friends
 
-setcpm(125)
+setcpm(35)
 
 stack(
   // Silly bird calls - high pitched chirps

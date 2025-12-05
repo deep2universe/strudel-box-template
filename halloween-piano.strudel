@@ -1,5 +1,5 @@
 // Halloween Piano - A Haunting Musical Journey
-setcpm(72)
+setcpm(42)
 
 stack(
   // Eerie piano melody - chromatic descending phrases

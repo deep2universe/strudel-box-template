@@ -1,5 +1,5 @@
 // Piano House Deluxe - Komplexe House-Komposition mit Piano
-setcpm(112)
+setcpm(15)
 
 stack(
   // === DRUMS ===
